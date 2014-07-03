@@ -1,5 +1,13 @@
 package org.ss.poi;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -8,72 +16,63 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFPalette;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-
 public class POIWrite {
 
-    public HSSFColor setColor(HSSFWorkbook workbook, byte r, byte g, byte b) {
-        HSSFPalette palette = workbook.getCustomPalette();
-        HSSFColor hssfColor = null;
-        try {
-            hssfColor = palette.findSimilarColor(r, g, b);
-            if (hssfColor == null) {
-                System.err.println("null " + r + " " + g + " " + b);
-                palette.setColorAtIndex(HSSFColor.RED.index, r, g, b);
-                hssfColor = palette.getColor(HSSFColor.RED.index);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private static Map<String, short[]> pixelSizes;
 
-        return hssfColor;
+    static {
+        short[] sizePixel = {25, 50};
+        short[] sizeSmall = {50, 100};
+        short[] sizeBig = {300, 600};
+        pixelSizes = new HashMap<String, short[]>();
+        pixelSizes.put("PIXEL", sizePixel);
+        pixelSizes.put("SMALL", sizeSmall);
+        pixelSizes.put("BIG", sizeBig);
     }
 
-    public void write(Map<String, Object[]> data, HSSFWorkbook workbook, String sheetName, String filename) {
-        //HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet("Picture" + sheetName);
-        //sheet.setDefaultColumnWidth(1);
-        //using sheet.setColumnWidth for every cell instead
-        //sheet.setDefaultRowHeightInPoints(1);
-        //using row.setHeight foe every row instead
-        Map<String, HSSFCellStyle> colorToStyle = new HashMap<String, HSSFCellStyle>();
-        HSSFCellStyle style;
+    public void write(Map<String, Color[]> data, XSSFWorkbook workbook, String sheetName, String filename) {
+        System.err.println("Writing: " + sheetName);
+        XSSFSheet sheet = workbook.createSheet("Picture" + sheetName);
+        Map<Color, XSSFCellStyle> styleMap = new HashMap<Color, XSSFCellStyle>();
+        XSSFCellStyle blackStyle = workbook.createCellStyle();
+        blackStyle.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+        blackStyle.setFillForegroundColor(new XSSFColor(Color.BLACK));
+        styleMap.put(Color.BLACK, blackStyle);
 
         Set<String> keyset = data.keySet();
         int rownum = 0;
         for (String key : keyset) {
             Row row = sheet.createRow(rownum++);
-            row.setHeight((short) 50);
-            Object[] objArr = data.get(key);
-            int cellnum = 0;
-            for (Object obj : objArr) {
-                sheet.setColumnWidth(cellnum, 100);
-                Cell cell = row.createCell(cellnum++);
-                RGBColor rgb = (RGBColor) obj;
-                try {
-                    style = colorToStyle.get(rgb.toString());
-                    cell.setCellStyle(style);
-                } catch (Exception e) {
-                    style = workbook.createCellStyle();
-                    style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-                    style.setFillForegroundColor(setColor(workbook, rgb.getR(), rgb.getG(), rgb.getB()).getIndex());
-                    colorToStyle.put(rgb.toString(), style);
-                    cell.setCellStyle(style);
-                }
 
+            double freeMem = (Runtime.getRuntime().freeMemory() / (1024 * 1024));
+            double totalMem = (Runtime.getRuntime().totalMemory() / (1024 * 1024));
+            String memoryUsageString = "Memory: free: " + freeMem + "Mb, total: " + totalMem + "Mb";
+            System.err.println("ROW: " + rownum + ", " + memoryUsageString);
+
+            row.setHeight(pixelSizes.get(Parameters.getCellSize())[0]);
+            Color[] objArr = data.get(key);
+            int cellnum = 0;
+            for (Color color : objArr) {
+                sheet.setColumnWidth(cellnum, pixelSizes.get(Parameters.getCellSize())[1]);
+                Cell cell = row.createCell(cellnum++);
+
+                XSSFCellStyle style = styleMap.get(color);
+                if (style == null) {
+                    style = workbook.createCellStyle();
+                    style.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
+                    style.setFillForegroundColor(new XSSFColor(color));
+                    styleMap.put(color, style);
+                    System.err.println("Style added, now: " + styleMap.size());
+                }
+                cell.setCellStyle(style);
             }
         }
 
         try {
-            System.out.println("Writing: " + filename);
+            System.out.println("Writing file: " + filename);
             FileOutputStream out =
-                    new FileOutputStream(new File(filename + ".xls"));
+                    new FileOutputStream(new File(filename + ".xlsx"));
+
             workbook.write(out);
             out.close();
             System.out.println("Frame #" + sheetName + " written successfully...");
@@ -83,7 +82,11 @@ public class POIWrite {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.err.println("Nr of styles: " + styleMap.size());
+    }
 
+    private XSSFColor setColor(byte r, byte g, byte b) {
+        return new XSSFColor(new java.awt.Color(r, g, b));
     }
 
 }

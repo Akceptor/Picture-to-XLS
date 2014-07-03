@@ -8,6 +8,7 @@
 	<!-- The absolute path to the JBoss Server, please change this... -->
 	<properties>
 		<jboss.directory>d:/jBoss510</jboss.directory>
+        <apache.poi.version>3.10-FINAL</apache.poi.version>
 	</properties>
 
 	<packaging>war</packaging>
@@ -16,8 +17,13 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.10-FINAL</version>
+			<version>${apache.poi.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
