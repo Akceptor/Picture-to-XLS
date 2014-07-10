@@ -1,10 +1,16 @@
-package org.ss.poi;
+package org.ss.poi.controller;
 
 import com.oreilly.servlet.MultipartRequest;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.ss.poi.IMGRead;
+import org.ss.poi.POIWrite;
+import org.ss.poi.Parameters;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
@@ -14,15 +20,17 @@ import java.io.PrintWriter;
 import java.util.*;
 import java.util.List;
 
-public class FileReceiver extends HttpServlet {
+@Controller
+@RequestMapping("/")
+public class FileReceiver {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
+    @RequestMapping(method = RequestMethod.GET)
+    public String showForm() {
+        return "upload";
+    }
 
-    public void doPost(HttpServletRequest req, HttpServletResponse res)
-            throws ServletException, IOException {
+    @RequestMapping(method = RequestMethod.POST)
+    public void processPicture(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
 
@@ -74,46 +82,5 @@ public class FileReceiver extends HttpServlet {
             e.printStackTrace();
         }
         out.close();
-    }
-
-    public void doGet(HttpServletRequest req, HttpServletResponse res)
-            throws ServletException, IOException {
-
-        res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
-        out.println("<HTML>");
-        out.println("<HEAD><TITLE>Picture to Excell</TITLE>");
-        out.println("<script type='text/javascript' src='//code.jquery.com/jquery-1.9.1.js'></script>");
-        out.println("<script type='text/javascript'>");
-        out.println("$(window).load(function(){function readURL(input) {\n" +
-                "    if (input.files && input.files[0]) {\n" +
-                "        var reader = new FileReader();\n" +
-                "        reader.onload = function (e) {\n" +
-                "            $('#preview').attr('src', e.target.result);\n" +
-                "            $('#preview').attr('width', \"512px\");\n" +
-                "        }\n" +
-                "        reader.readAsDataURL(input.files[0]);\n" +
-                "    }\n" +
-                "}\n" +
-                "$(\"#imgInp\").change(function(){\n" +
-                "    readURL(this);\n" +
-                "});});");
-        out.println("</script>");
-        out.println("</HEAD>");
-        out.println("<BODY>");
-        out.println("<H1>Picture to Excell</H1>");
-        out.println("<FORM ACTION=\"poipainter-0.0.1-SNAPSHOT/\" ENCTYPE=\"multipart/form-data\" METHOD=POST>");
-        out.println("Select picture <INPUT TYPE=FILE NAME=file id=\"imgInp\"><BR>");
-        out.println("<img id=\"preview\" src=\"#\" alt=\"Preview\" width=\"1px\"/><br>");
-        out.println("<hr><BR><h2>Color depth</h2>");
-
-        out.println("<INPUT TYPE=CHECKBOX NAME='DECREASE COLOR' CHECKED>Decrease to 8 bits per pixel (256 colors)</INPUT><BR><h2>Picture pixel size</h2>");
-        out.println("<input type=\"radio\" name=\"CELL SIZE\" value=\"PIXEL\" checked>PIXEL<br>\n" +
-                "<input type=\"radio\" name=\"CELL SIZE\" value=\"SMALL\">SMALL<br>\n" +
-                "<input type=\"radio\" name=\"CELL SIZE\" value=\"BIG\">BIG<br>\n");
-        out.println("<INPUT TYPE=SUBMIT>");
-        out.println("</FORM>");
-        out.println("</BODY></HTML>");
-
     }
 }

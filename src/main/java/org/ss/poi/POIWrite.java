@@ -23,7 +23,7 @@ public class POIWrite {
     static {
         short[] sizePixel = {25, 50};
         short[] sizeSmall = {50, 100};
-        short[] sizeBig = {300, 600};
+        short[] sizeBig = {300, 800};
         pixelSizes = new HashMap<String, short[]>();
         pixelSizes.put("PIXEL", sizePixel);
         pixelSizes.put("SMALL", sizeSmall);
