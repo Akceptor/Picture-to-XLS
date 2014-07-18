@@ -3,9 +3,9 @@ package org.ss.poi.controller;
 import com.oreilly.servlet.MultipartRequest;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.ss.poi.IMGRead;
 import org.ss.poi.POIWrite;
 import org.ss.poi.Parameters;
@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 import java.util.List;
 
@@ -30,10 +29,10 @@ public class FileReceiver {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void processPicture(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    @ResponseBody
+    public byte[] processPicture(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html");
-        PrintWriter out = res.getWriter();
-
+        byte[] bytes = new byte[0];
         try {
             // Blindly take it on faith this is a multipart/form-data request
             // Construct a MultipartRequest to help read the information.
@@ -65,22 +64,19 @@ public class FileReceiver {
                 pw.write(data, new XSSFWorkbook(), "Picture", System.getProperty("java.io.tmpdir") + File.separator + filename);
 
                 //send file
-                res.setContentType("application/octet-stream");
-                res.setHeader("Content-Disposition", "attachment; filename=\\" + filename + ".xlsx");
                 File f = new File(System.getProperty("java.io.tmpdir"));
                 List<String> names = new ArrayList<String>(Arrays.asList(f.list()));
                 System.err.println(names);
-                java.io.FileInputStream fileInputStream = new java.io.FileInputStream(System.getProperty("java.io.tmpdir") + "/" + filename + ".xlsx");
-                int i;
-                while ((i = fileInputStream.read()) != -1) {
-                    out.write(i);
-                }
-                fileInputStream.close();
+                bytes = org.springframework.util.FileCopyUtils.copyToByteArray(new File(System.getProperty("java.io.tmpdir") + "/" + filename + ".xlsx"));
 
+                res.setContentType("application/octet-stream");
+                res.setHeader("Content-Disposition", "attachment; filename=\\" + filename + ".xlsx");
+                res.setContentLength(bytes.length);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        out.close();
+        return bytes;
     }
+
 }
