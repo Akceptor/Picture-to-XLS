@@ -11,10 +11,6 @@ import java.util.TreeMap;
 
 public class IMGRead {
 
-    private static final int IMG_WIDTH = 255;
-
-    private static final int IMG_HEIGHT = 255;
-
     public Map<String, Color[]> read(String fileName) {
         System.err.println("Reading: " + fileName);
         File file = new File(fileName);
@@ -23,8 +19,9 @@ public class IMGRead {
         Map<String, Color[]> data = new TreeMap<String, Color[]>();
         try {
             image = ImageIO.read(file);//read picture from file
-            //int type = source.getType() == 0 ? BufferedImage.TYPE_INT_ARGB : source.getType();//get type
-            //image = resizeImage(source, type);//resize
+            if ("on".equals(Parameters.getResize())) {
+                image = resizeImage(image, Parameters.getWidth(), Parameters.getHeight());//resize
+            }
             if ("on".equals(Parameters.getDecreaseColor())) {
                 image = convert8(image);
             }
@@ -49,13 +46,32 @@ public class IMGRead {
         return data;
     }
 
-    private static BufferedImage resizeImage(BufferedImage originalImage, int type) {
-        BufferedImage resizedImage = new BufferedImage(IMG_WIDTH, IMG_HEIGHT, type);
-        Graphics2D g = resizedImage.createGraphics();
-        g.drawImage(originalImage, 0, 0, IMG_WIDTH, IMG_HEIGHT, null);
-        g.dispose();
+    /**
+     * Resizes an image using a Graphics2D object backed by a BufferedImage.
+     *
+     * @param src - source image to scale
+     * @param w   - desired width
+     * @param h   - desired height
+     * @return - the new resized image
+     */
+    private static BufferedImage resizeImage(BufferedImage src, int w, int h) {
+        int finalw = w;
+        int finalh = h;
+        double factor = 1.0d;
+        if (src.getWidth() > src.getHeight()) {
+            factor = ((double) src.getHeight() / (double) src.getWidth());
+            finalh = (int) (finalw * factor);
+        } else {
+            factor = ((double) src.getWidth() / (double) src.getHeight());
+            finalw = (int) (finalh * factor);
+        }
 
-        return resizedImage;
+        BufferedImage resizedImg = new BufferedImage(finalw, finalh, BufferedImage.TRANSLUCENT);
+        Graphics2D g2 = resizedImg.createGraphics();
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.drawImage(src, 0, 0, finalw, finalh, null);
+        g2.dispose();
+        return resizedImg;
     }
 
     /**

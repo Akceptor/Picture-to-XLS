@@ -3,6 +3,7 @@ package org.ss.poi.controller;
 import com.oreilly.servlet.MultipartRequest;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,20 +44,17 @@ public class FileReceiver {
                     new MultipartRequest(req, System.getProperty("java.io.tmpdir") + "/", 1024 * 1024 * 1024,
                             new com.oreilly.servlet.multipart.DefaultFileRenamePolicy());
 
-            Enumeration<?> params = multi.getParameterNames();
-            while (params.hasMoreElements()) {
-                String name = (String) params.nextElement();
-                String value = multi.getParameter(name);
-                //out.println(name + " = " + value);
-                Parameters.setCellSize(multi.getParameter("CELL SIZE"));
-                Parameters.setDecreaseColor(multi.getParameter("DECREASE COLOR"));
-            }
+            Parameters.setCellSize(multi.getParameter("CELL SIZE"));
+            Parameters.setResize(multi.getParameter("RESIZE"));
+            Parameters.setDecreaseColor(multi.getParameter("DECREASE COLOR"));
+            Parameters.setWidth(Integer.parseInt(multi.getParameter("WIDTH")));
+            Parameters.setHeight(Integer.parseInt(multi.getParameter("HEIGHT")));
 
             Enumeration<?> files = multi.getFileNames();
             while (files.hasMoreElements()) {
                 String name = (String) files.nextElement();
                 String filename = multi.getFilesystemName(name);
-                System.err.println(filename);
+                System.err.println("FileName: " + filename);
 
                 IMGRead ir = new IMGRead();
                 Map<String, Color[]> data = ir.read(System.getProperty("java.io.tmpdir") + File.separator + filename);
@@ -67,7 +65,7 @@ public class FileReceiver {
                 File f = new File(System.getProperty("java.io.tmpdir"));
                 List<String> names = new ArrayList<String>(Arrays.asList(f.list()));
                 System.err.println(names);
-                bytes = org.springframework.util.FileCopyUtils.copyToByteArray(new File(System.getProperty("java.io.tmpdir") + "/" + filename + ".xlsx"));
+                bytes = FileCopyUtils.copyToByteArray(new File(System.getProperty("java.io.tmpdir") + "/" + filename + ".xlsx"));
 
                 res.setContentType("application/octet-stream");
                 res.setHeader("Content-Disposition", "attachment; filename=\\" + filename + ".xlsx");

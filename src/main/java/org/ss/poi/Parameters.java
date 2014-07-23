@@ -6,6 +6,9 @@ package org.ss.poi;
 public class Parameters {
     private static String decreaseColor = "off";
     private static String cellSize = "PIXEL";
+    private static String resize = "off";
+    private static int width = 255;
+    private static int height = 255;
 
     public static String getDecreaseColor() {
         return decreaseColor;
@@ -23,5 +26,33 @@ public class Parameters {
     public static void setCellSize(String cellSize) {
         Parameters.cellSize = cellSize;
         System.out.println("CELL SIZE:" + cellSize);
+    }
+
+    public static String getResize() {
+        return resize;
+    }
+
+    public static void setResize(String resize) {
+
+        System.out.println("DO RESIZE:" + resize);
+        Parameters.resize = resize;
+    }
+
+    public static int getWidth() {
+        return width;
+    }
+
+    public static void setWidth(int width) {
+        System.out.println("RESIZE WIDTH:" + width);
+        Parameters.width = width;
+    }
+
+    public static int getHeight() {
+        return height;
+    }
+
+    public static void setHeight(int height) {
+        System.out.println("RESIZE HEIGHT:" + height);
+        Parameters.height = height;
     }
 }
