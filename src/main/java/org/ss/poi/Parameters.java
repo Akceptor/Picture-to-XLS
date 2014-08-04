@@ -7,6 +7,7 @@ public class Parameters {
     private static String decreaseColor = "off";
     private static String cellSize = "PIXEL";
     private static String resize = "off";
+    private static String findDMCColor = "off";
     private static int width = 255;
     private static int height = 255;
 
@@ -54,5 +55,14 @@ public class Parameters {
     public static void setHeight(int height) {
         System.out.println("RESIZE HEIGHT:" + height);
         Parameters.height = height;
+    }
+
+    public static void setFindDMCColor(String findDMCColor) {
+        Parameters.findDMCColor = findDMCColor;
+        System.out.println("FIND DMC COLOR:" + findDMCColor);
+    }
+
+    public static String getFindDMCColor() {
+        return findDMCColor;
     }
 }

@@ -33,7 +33,11 @@ public class IMGRead {
                 Color[] line = new Color[image.getWidth()];
                 for (int x = 0; x < image.getWidth(); x++) {
                     int clr = image.getRGB(x, y);
-                    line[x] = new Color(clr);
+                    if ("on".equals(Parameters.getFindDMCColor())) {
+                        line[x] = DMCColorFinder.findNearestDMCColor(new Color(clr));
+                    } else {
+                        line[x] = new Color(clr);
+                    }
                 }
                 data.put(String.format("%03d", y), line);
 

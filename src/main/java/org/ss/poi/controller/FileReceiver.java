@@ -47,6 +47,7 @@ public class FileReceiver {
             Parameters.setCellSize(multi.getParameter("CELL SIZE"));
             Parameters.setResize(multi.getParameter("RESIZE"));
             Parameters.setDecreaseColor(multi.getParameter("DECREASE COLOR"));
+            Parameters.setFindDMCColor(multi.getParameter("CONVERT TO DMC FLOSS"));
             Parameters.setWidth(Integer.parseInt(multi.getParameter("WIDTH")));
             Parameters.setHeight(Integer.parseInt(multi.getParameter("HEIGHT")));
 

@@ -210,323 +210,146 @@ public interface DMCColors {
             new DMCColor(840, "Beige Brown-MD", 128, 85, 30),
             new DMCColor(841, "Beige Brown-LT", 188, 134, 107),
             new DMCColor(842, "Beige Brown-VY LT", 219, 194, 164),
-            new DMCColor(844, "Beaver Brown-ULT D", 107, 103, 102)});
-/*
-    868
-    Hazel Nut
-    Brown-VYD 153 92 48 995 C30
-    869
-    Hazel Nut
-    Brn-
-    VY DK
-    153 92 48 995 C30
-    890
-    Pistachio Grn
-    -
-    ULT D
-    79 86 76 4F564 C
-    891 Carnation-DK 241 49 84 F13154
-    892 Carnation-MD 249 90 97 F95A61
-    893 Carnation-LT 243 149 157 F3959D
-    894 Carnation-
-    VY LT
-    255 194 191 FFC2BF
-    895
-    Hunter Green
-    -
-    VY DK
-    89 92 78 595 C4E
-    898
-    Coffee Brown
-    -
-    VY DK
-    118 55 19 763713
-            899 Rose-MD 233 109 115 E96D73
-    900
-    Burnt Orange
-    -DK 206 43 0 CE2B00
-    902 Granet-
-    VY DK
-    138 24 77 8 A184D
-    904
-    Parrot Green
-    -
-    VY DK
-    78 95 57 4E5F39
-            905
-    Parrot Green
-    -DK 98 119 57 627739
-            906
-    Parrot Green
-    -MD 143 163 89 8FA359
-    907
-    Parrot Green
-    -LT 185 200 102 B9C866
-    909
-    Emerald Green
-    -
-    VY DK
-    49 105 85 316955
-            910
-    Emerald Green
-    -DK 48 116 91 30745 B
-    911
-    Emerald Green
-    -MD 49 128 97 318061
-            912
-    Emerald Green
-    -LT 115 158 115 739E73
-            913
-    Nile Green
-    -MD 153 188 149 99 BC95
-    915 Plum-DK 170 24 91 AA185B
-    917 Plum-MD 171 22 95 AB165F
-    918
-    Red Copper
-    -DK 168 68 76 A8444C
-    919
-    Red Copper
-    180 75 82 B44B52
-    920 Copper-MD 197 94 88 C55E58
-    921 Copper 206 103 91 CE675B
-    922 Copper-LT 237 134 115 ED8673
-    924
-    Grey Green
-    --
-    VY DK
-    86 99 100 566364
-            926
-    Grey Green
-    -LT 96 116 115 607473
-            927
-    Grey Green
-    -LT 200 198 194 C8C6C2
-    928
-    Grey Green
-    --
-    VY LT
-    225 224 216 E1E0D8
-    930
-    Antique Blue
-    -DK 102 122 140 667 A8C
-    931
-    Antique Blue
-    -MD 124 135 145 7 C8791
-    932
-    Antique Blue
-    -LT 182 186 194 B6BAC2
-    934
-    Black Avocado
-    Green 62 59 40 3E3B28
-    935
-    Avocado Green
-    -DK 67 63 47 433F2F
-            936
-    Avocado Green
-    --
-    VY D
-    69 69 49 454531
-            937
-    Avocado Green
-    -MD 73 86 55 495637
-            938
-    Coffee Brown
-    -
-    ULT DK
-    99 39 16 632710
-            939
-    Navy Blue
-    -
-    Vy DK
-    0 0 49 000031
-            943 Aquamarine-MD 0 162 117 00 A275
-    945 Flesh-MD 255 206 164 FFCEA4
-    946
-    Burnt Orange
-    -MD 244 73 0 F44900
-    947
-    Burnt Orange
-    255 91 0 FF5B00
-    948
-    Peach Flesh
-    -
-    VY LT
-    255 243 231 FFF3E7
-    950
-    Sportsman Flesh
-    239 162 127 EFA27F
-    951 Flesh 255 229 188 FFE5BC
-    954
-    Nile Green
-    170 213 164 AAD5A4
-    955
-    Nile Green
-    -LT 214 230 204 D6E6CC
-    956 Geranium 255 109 115 FF6D73
-    957 Gernanium-PALE 255 204 208 FFCCD0
-    958
-    Sea Green
-    -DK 0 160 130 00 A082
-    959
-    Sea Green
-    -MD 171 206 177 ABCEB1
-    961
-    Dusty Rose
-    -DK 243 108 123 F36C7B
-    962
-    Dusty Rose
-    -MD 253 134 141 FD868D
-    963
-    Dusty Rose
-    -
-    ULT VY
-    L 233 233 FFE9E9
-    964
-    Sea Green
-    -LT 208 224 210 D0E0D2
-    966
-    Baby Green
-    -MD 206 213 176 CED5B0
-    970 Pumpkin-LT 255 117 24 FF7518
-    971 Pumpkin 255 106 0 FF6A00
-    972 Canary-DP 255 146 0 FF9200
-    973 Canary-BRT 255 194 67 FFC243
-    975
-    Golden Brown
-    -DK 158 67 18 9E4312
-            976
-    Golden Brown
-    -MD 246 141 57 F68D39
-    977
-    Golden Brown
-    -LT 255 164 73 FFA449
-    986
-    Forest Green
-    -
-    VY DK
-    58 82 65 3 A5241
-    987
-    Forest Green
-    -DK 83 97 73 536149
-            988
-    Forest Green
-    -MD 134 145 110 86916E
-            989
-    Forest Green
-    134 153 110 86996E
-            991 Aquamarine-DK 47 91 73 2F5 B49
-    992 Aquamarine 146 183 165 92 B7A5
-    993 Aquamarine-LT 192 224 200 C0E0C8
-    995
-    Electric Blue
-    -DK 0 123 134 007 B86
-    996
-    Electric Blue
-    -MD 170 222 225 AADEE1
-    3011
-    Khaki Green
-    -DK 123 91 64 7 B5B40
-    3012
-    Khaki Green
-    -MD 170 134 103 AA8667
-    3013
-    Khaki Green
-    -LT 208 195 164 D0C3A4
-    3021
-    Brown Grey
-    -
-    VY DK
-    115 91 93 735 B5D
-    3022
-    Brown Grey
-    -MD 172 172 170 ACACAA
-    3023
-    Brown Grey
-    -LT 198 190 173 C6BEAD
-    3024
-    Brown Grey
-    -
-    VY LT
-    210 208 205 D2D0CD
-    3031
-    Mocha Brown
-    -
-    VY DK
-    84 56 23 543817
-            3032
-    Mocha Brown
-    -MD 188 156 120 BC9C78
-    3033
-    Mocha Brown
-    -
-    VY LT
-    239 219 190 EFDBBE
-    3041
-    Antique Violet
-    -MD 190 155 167 BE9BA7
-    3042
-    Antique Violet
-    -LT 225 205 200 E1CDC8
-    3045
-    Yellow Beige
-    -DK 216 151 105 D89769
-    3046
-    Yellow Beige
-    -MD 229 193 139 E5C18B
-    3047
-    Yellow Beige
-    -LT 255 236 211 FFECD3
-    3051
-    Green Grey
-    -DK 85 73 0 554900
-            3052
-    Green Grey
-    --MD 137 141 114 898D72
+            new DMCColor(844, "Beaver Brown-ULT D", 107, 103, 102),
+            new DMCColor(868, "Hazel Nut Brown-VYD", 153, 92, 48),
+            new DMCColor(869, "Hazel Nut Brn-VY DK", 153, 92, 48),
+            new DMCColor(890, "Pistachio Grn-ULT D", 79, 86, 76),
+            new DMCColor(891, "Carnation-DK", 241, 49, 84),
+            new DMCColor(892, "Carnation-MD", 249, 90, 97),
+            new DMCColor(893, "Carnation-LT", 243, 149, 157),
+            new DMCColor(894, "Carnation-VY LT", 255, 194, 191),
+            new DMCColor(895, "Hunter Green-VY DK", 89, 92, 78),
+            new DMCColor(898, "Coffee Brown-VY DK", 118, 55, 19),
+            new DMCColor(899, "Rose-MD", 233, 109, 115),
+            new DMCColor(900, "Burnt Orange-DK", 206, 43, 0),
+            new DMCColor(902, "Granet-VY DK", 138, 24, 77),
+            new DMCColor(904, "Parrot Green-VY DK", 78, 95, 57),
+            new DMCColor(905, "Parrot Green-DK", 98, 119, 57),
+            new DMCColor(906, "Parrot Green-MD", 143, 163, 89),
+            new DMCColor(907, "Parrot Green-LT", 185, 200, 102),
+            new DMCColor(909, "Emerald Green-VY DK", 49, 105, 85),
+            new DMCColor(910, "Emerald Green-DK", 48, 116, 91),
+            new DMCColor(911, "Emerald Green-MD", 49, 128, 97),
+            new DMCColor(912, "Emerald Green-LT", 115, 158, 115),
+            new DMCColor(913, "Nile Green-MD", 153, 188, 149),
+            new DMCColor(915, "Plum-DK", 170, 24, 91),
+            new DMCColor(917, "Plum-MD", 171, 22, 95),
+            new DMCColor(918, "Red Copper-DK", 168, 68, 76),
+            new DMCColor(919, "Red Copper", 180, 75, 82),
+            new DMCColor(920, "Copper-MD", 197, 94, 88),
+            new DMCColor(921, "Copper", 206, 103, 91),
+            new DMCColor(922, "Copper-LT", 237, 134, 115),
+            new DMCColor(924, "Grey Green-VY DK", 86, 99, 100),
+            new DMCColor(926, "Grey Green-LT", 96, 116, 115),
+            new DMCColor(927, "Grey Green-LT", 200, 198, 194),
+            new DMCColor(928, "Grey Green-VY LT", 225, 224, 216),
+            new DMCColor(930, "Antique Blue-DK", 102, 122, 140),
+            new DMCColor(931, "Antique Blue-MD", 124, 135, 145),
+            new DMCColor(932, "Antique Blue-LT", 182, 186, 194),
+            new DMCColor(934, "Black Avocado Green", 62, 59, 40),
+            new DMCColor(935, "Avocado Green-DK", 67, 63, 47),
+            new DMCColor(936, "Avocado Green-VY D", 69, 69, 49),
+            new DMCColor(937, "Avocado Green-MD", 73, 86, 55),
+            new DMCColor(938, "Coffee Brown-ULT DK", 99, 39, 16),
+            new DMCColor(939, "Navy Blue-VY DK", 0, 0, 49),
+            new DMCColor(943, "Aquamarine-MD", 0, 162, 117),
+            new DMCColor(945, "Flesh-MD", 255, 206, 164),
+            new DMCColor(946, "Burnt Orange-MD", 244, 73, 0),
+            new DMCColor(947, "Burnt Orange", 206, 43, 0),
+            new DMCColor(948, "Peach Flesh-VY LT", 255, 243, 231),
+            new DMCColor(950, "Sportsman Flesh", 239, 162, 127),
+            new DMCColor(951, "Flesh", 255, 229, 188),
+            new DMCColor(954, "Nile Green", 170, 213, 164),
+            new DMCColor(955, "Nile Green-LT", 214, 230, 204),
+            new DMCColor(956, "Geranium", 255, 109, 115),
+            new DMCColor(957, "Gernanium-PALE", 255, 204, 208),
+            new DMCColor(958, "Sea Green-DK", 0, 160, 130),
+            new DMCColor(959, "Sea Green-MD", 171, 206, 177),
+            new DMCColor(961, "Dusty Rose-DK", 243, 108, 123),
+            new DMCColor(962, "Dusty Rose-MD", 253, 134, 141),
+            new DMCColor(963, "Dusty Rose-ULT VY L", 255, 233, 233),
+            new DMCColor(964, "Sea Green-LT", 208, 224, 210),
+            new DMCColor(966, "Baby Green-MD", 206, 213, 176),
+            new DMCColor(970, "Pumpkin-LT", 255, 117, 24),
+            new DMCColor(971, "Pumpkin", 255, 106, 0),
+            new DMCColor(972, "Canary-DP", 255, 146, 0),
+            new DMCColor(973, "Canary-BRT", 255, 194, 67),
+            new DMCColor(975, "Golden Brown-DK", 158, 67, 18),
+            new DMCColor(976, "Golden Brown-MD", 246, 141, 57),
+            new DMCColor(977, "Golden Brown-LT", 255, 164, 73),
+            new DMCColor(986, "Forest Green-VY DK", 58, 82, 65),
+            new DMCColor(987, "Forest Green-DK", 83, 97, 73),
+            new DMCColor(988, "Forest Green-MD", 134, 145, 110),
+            new DMCColor(989, "Forest Green", 134, 153, 110),
+            new DMCColor(991, "Aquamarine-DK", 47, 91, 73),
+            new DMCColor(992, "Aquamarine", 146, 183, 165),
+            new DMCColor(993, "Aquamarine-LT", 192, 224, 200),
+            new DMCColor(995, "Electric Blue-DK", 0, 123, 134),
+            new DMCColor(996, "Electric Blue-MD", 170, 222, 225),
+            new DMCColor(3011, "Khaki Green-DK", 123, 91, 64),
+            new DMCColor(3012, "Khaki Green-MD", 170, 134, 103),
+            new DMCColor(3013, "Khaki Green-LT", 208, 195, 164),
+            new DMCColor(3021, "Brown Grey-VY DK", 115, 91, 93),
+            new DMCColor(3022, "Brown Grey-MD", 172, 172, 170),
+            new DMCColor(3023, "Brown Grey-LT", 198, 190, 173),
+            new DMCColor(3024, "Brown Grey-VY LT", 210, 208, 205),
+            new DMCColor(3031, "Mocha Brown-VY DK", 84, 56, 23),
+            new DMCColor(3032, "Mocha Brown-MD", 188, 156, 120),
+            new DMCColor(3033, "Mocha Brown-VY LT", 239, 219, 190),
+            new DMCColor(3041, "Antique Violet-MD", 190, 155, 167),
+            new DMCColor(3042, "Antique Violet-LT", 225, 205, 200),
+            new DMCColor(3045, "Yellow Beige-DK", 216, 151, 105),
+            new DMCColor(3046, "Yellow Beige-MD", 229, 193, 139),
+            new DMCColor(3047, "Yellow Beige-LT", 255, 236, 211),
+            new DMCColor(3051, "Green Grey-DK", 85, 73, 0),
+            new DMCColor(3052, "Green Grey-MD", 137, 141, 114)
+    });
+            /*
             3053
     Green Grey
-    187 179 148 BBB394
+    187 179 148BBB394
     3064
     Sportsman Flsh
     -
     VY D
-    194 101 76 C2654C
+    194 101 76C2654C
     3072
     Beaver Grey
     -
     VY LT
-    233 233 223 E9E9DF
+    233 233 223E9E9DF
     3078
     Golden Yellow
     -
     VY LT
-    255 255 220 FFFFDC
+    255 255 220FFFFDC
     3325
     Baby Blue
-    -LT 202 226 229 CAE2E5
-    3326 Rose-LT 255 157 150 FF9D96
-    3328 Salmon-DK 188 64 85 BC4055
-    3340 Apricot-MD 255 123 103 FF7B67
-    3341 Apricot 255 172 162 EBACA2
+    -LT 202 226 229CAE2E5
+    3326Rose-LT 255 157 150FF9D96
+    3328Salmon-DK 188 64 85BC4055
+    3340Apricot-MD 255 123 103FF7B67
+    3341Apricot 255 172 162EBACA2
     3345
     Hunter Green
     -DK 97 100 82 616452
             3346
     Hunter Green
-    120 134 107 78866 B
+    120 134 107 78866B
     3347
     Yellow Green
     -MD 128 152 115 809873
             3348
     Yellow Green
-    -LT 225 249 190 E1F9BE
+    -LT 225 249 190E1F9BE
     3350
     Dusty Rose
     -
     ULT DK
-    201 79 91 C94F5B
+    201 79 91C94F5B
     3354
     Dusty Rose
-    -LT 255 214 209 FFD6D1
+    -LT 255 214 209FFD6D1
     3362
     Pine Green
     -DK 96 95 84 605F54
@@ -535,82 +358,82 @@ public interface DMCColors {
     -MD 116 127 96 747F60
             3364
     Pine Green
-    161 167 135 A1A787
+    161 167 135A1A787
     3371
     Black Brown
     83 37 16 532510
-            3607 Plum-LT 231 79 134 E74F86
-    3608 Plum-
+            3607Plum-LT 231 79 134E74F86
+            3608Plum-
     VY LT
-    247 152 182 F798B6
-    3609 Plum-
+    247 152 182F798B6
+    3609Plum-
     ULT LT
-    255 214 229 FFD6E5
-    3685 Mauve-DK 161 53 79 A1354F
-    3687 Mauve 203 78 97 CB4E61
-    3688 Mauve-MD 250 151 144 FA9790
-    3689 Mauve-LT 255 213 216 FFD5D8
-    3705 Melon-DK 255 85 91 FF555B
-    3706 Melon-MD 255 128 109 FF806D
-    3708 Melon-LT 254 212 219 FED4DB
-    3712 Salmon-MD 230 101 107 E6656B
-    3713 Salmon-
+    255 214 229FFD6E5
+    3685Mauve-DK 161 53 79A1354F
+    3687Mauve 203 78 97CB4E61
+    3688Mauve-MD 250 151 144FA9790
+    3689Mauve-LT 255 213 216FFD5D8
+    3705Melon-DK 255 85 91FF555B
+    3706Melon-MD 255 128 109FF806D
+    3708Melon-LT 254 212 219FED4DB
+    3712Salmon-MD 230 101 107E6656B
+    3713Salmon-
     VY LT
-    253 229 217 FDE5D9
+    253 229 217FDE5D9
     3716
     Dusty Rose
     -
     VY LT
-    255 211 212 FFD3D4
+    255 211 212FFD3D4
     3721
     Shell Pink
-    -DK 184 75 77 B84B4D
+    -DK 184 75 77B84B4D
     3722
     Shell Pink
-    -MD 184 89 88 B85958
+    -MD 184 89 88B85958
     3726
     Antique Mauve
-    -DK 195 118 123 C3767B
+    -DK 195 118 123C3767B
     3727
     Antique Mauve
-    -LT 255 199 196 FFC7C4
+    -LT 255 199 196FFC7C4
     3731
     Dusty Rose
     -
     VY DK
-    209 93 103 D15D67
-    3733
+    209 93 103D15D 67
+            3733
     Dusty Rose
-    255 154 148 FF9A94
+    255 154 148FF9A94
     3740
     Antique Violet
-    -DK 156 125 133 9 C7D85
+    -DK 156 125 133 9C7D85
     3743
     Antique Violet
     -
     VY L
-    235 235 231 EBEBE7
+    235 235 231EBEBE7
     3746
     Blue Violet
-    -DK 149 102 162 9566 A2
+    -DK 149 102 162 9566A2
     3747
     Blue Violet
     -
     VY LT
-    230 236 232 E6ECE8
+    230 236 232E6ECE8
     3750
     Antique Blue
     -
     VY DK
-    12 91 108 0 C5B6C
+    12 91 108 0C5B6C
     3752
     Antique Blue
     -
     VY LT
-    194 209 206 C2D1CE
-    3753 Ant.Blue-
+    194 209 206C2D1CE
+    3753Ant.Blue-
     ULT VY
-    LT 237 247 247 EDF7F7
+    LT 237 247 247EDF7F7
     3755
     Baby Blue
     158 176 206 9EB0CE
@@ -618,11 +441,11 @@ public interface DMCColors {
     Baby Blue
     -
     ULT VY
-    LT 248 248 252 F8F8FC
-    3760 Wedgewood 102 142 152 668E98
+    LT 248 248 252F8F8FC
+    3760Wedgewood 102 142 152 668E98
             3761
     Sky Blue
-    -LT 227 234 230 E3EAE6
+    -LT 227 234 230E3EAE6
     3765
     Peacock Blue
     -
@@ -633,51 +456,51 @@ public interface DMCColors {
     -LT 24 101 111 18656F
             3768
     Grey Green
-    -DK 92 110 108 5 C6E6C
-    3770 Flesh-
+    -DK 92 110 108 5C6E6C
+    3770Flesh-
     VY LT
-    255 250 224 FFFAE0
+    255 250 224FFFAE0
     3772
     Negro Flesh
-    173 83 62 AD533E
+    173 83 62AD533E
     3773
     Sportsman Flsh
-    -MD 231 134 103 E78667
-    3774
+    -MD 231 134 103E78667
+            3774
     Sportsman Flsh
     -
     VY L
-    255 220 193 FFDCC1
-    3776 Mahogony-LT 221 109 91 DD6D5B
+    255 220 193FFDCC1
+    3776Mahogony-LT 221 109 91DD6D5B
     3777
     Terra Cotta
     -
     VY DK
-    191 64 36 BF4024
+    191 64 36BF4024
     3778
     Terra Cotta
-    -LT 237 122 100 ED7A64
-    3779 Ter.Cotta-
+    -LT 237 122 100ED 7A64
+    3779Ter.Cotta-
     ULT VY
-    L 255 177 152 FFB198
+    L 255 177 152FFB198
     3781
     Mocha Brown
-    -DK 113 71 42 71472 A
+    -DK 113 71 42 71472A
     3782
     Mocho Brown
-    -LT 206 175 144 CEAF90
+    -LT 206 175 144CEAF90
     3787
     Brown Grey
-    -DK 139 109 115 8 B6D73
+    -DK 139 109 115 8B6D73
     3790
     Beige Grey
     -
     ULT DK
-    140 117 109 8 C756D
+    140 117 109 8C756D
     3799
     Pewter Grey
     -
     VY DK
-    81 76 83 514 C53
-*/
+    81 76 83 514C53
+    */
 }

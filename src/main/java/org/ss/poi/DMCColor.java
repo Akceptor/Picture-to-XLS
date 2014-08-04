@@ -18,6 +18,11 @@ public class DMCColor {
         this.rgbHEX = String.format("#%02x%02x%02x", rgb.getRed(), rgb.getGreen(), rgb.getBlue());
     }
 
+    public DMCColor(Color color) {
+        this.rgb = color;
+        this.rgbHEX = String.format("#%02x%02x%02x", this.rgb.getRed(), this.rgb.getGreen(), this.rgb.getBlue());
+    }
+
     public DMCColor(int dmcCode, String dmcName, Color rgb) {
         this.dmcCode = dmcCode;
         this.dmcName = dmcName;
