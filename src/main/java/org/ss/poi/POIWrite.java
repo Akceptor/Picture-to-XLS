@@ -30,7 +30,7 @@ public class POIWrite {
         pixelSizes.put("BIG", sizeBig);
     }
 
-    public void write(Map<String, Color[]> data, XSSFWorkbook workbook, String sheetName, String filename) {
+    public void write(Map<String, DMCColor[]> data, XSSFWorkbook workbook, String sheetName, String filename) {
         System.err.println("Writing: " + sheetName);
         XSSFSheet sheet = workbook.createSheet("Picture" + sheetName);
         Map<Color, XSSFCellStyle> styleMap = new HashMap<Color, XSSFCellStyle>();
@@ -50,21 +50,22 @@ public class POIWrite {
             System.err.println("ROW: " + rownum + ", " + memoryUsageString);
 
             row.setHeight(pixelSizes.get(Parameters.getCellSize())[0]);
-            Color[] objArr = data.get(key);
+            DMCColor[] objArr = data.get(key);
             int cellnum = 0;
-            for (Color color : objArr) {
+            for (DMCColor color : objArr) {
                 sheet.setColumnWidth(cellnum, pixelSizes.get(Parameters.getCellSize())[1]);
                 Cell cell = row.createCell(cellnum++);
 
-                XSSFCellStyle style = styleMap.get(color);
+                XSSFCellStyle style = styleMap.get(color.getRgb());
                 if (style == null) {
                     style = workbook.createCellStyle();
                     style.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);
-                    style.setFillForegroundColor(new XSSFColor(color));
-                    styleMap.put(color, style);
+                    style.setFillForegroundColor(new XSSFColor(color.getRgb()));
+                    styleMap.put(color.getRgb(), style);
                     System.err.println("Style added, now: " + styleMap.size());
                 }
                 cell.setCellStyle(style);
+                cell.setCellValue(color.getDmcCode());
             }
         }
 

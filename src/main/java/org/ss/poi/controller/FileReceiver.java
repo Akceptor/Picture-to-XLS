@@ -7,6 +7,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.ss.poi.DMCColor;
 import org.ss.poi.IMGRead;
 import org.ss.poi.POIWrite;
 import org.ss.poi.Parameters;
@@ -58,7 +59,7 @@ public class FileReceiver {
                 System.err.println("FileName: " + filename);
 
                 IMGRead ir = new IMGRead();
-                Map<String, Color[]> data = ir.read(System.getProperty("java.io.tmpdir") + File.separator + filename);
+                Map<String, DMCColor[]> data = ir.read(System.getProperty("java.io.tmpdir") + File.separator + filename);
                 POIWrite pw = new POIWrite();
                 pw.write(data, new XSSFWorkbook(), "Picture", System.getProperty("java.io.tmpdir") + File.separator + filename);
 

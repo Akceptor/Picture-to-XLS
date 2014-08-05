@@ -11,12 +11,12 @@ import java.util.TreeMap;
 
 public class IMGRead {
 
-    public Map<String, Color[]> read(String fileName) {
+    public Map<String, DMCColor[]> read(String fileName) {
         System.err.println("Reading: " + fileName);
         File file = new File(fileName);
 
         BufferedImage source, image;//source and resized images
-        Map<String, Color[]> data = new TreeMap<String, Color[]>();
+        Map<String, DMCColor[]> data = new TreeMap<String, DMCColor[]>();
         try {
             image = ImageIO.read(file);//read picture from file
             if ("on".equals(Parameters.getResize())) {
@@ -30,13 +30,13 @@ public class IMGRead {
             // Getting pixel color for every pixel
             for (Integer y = 0; y < image.getHeight(); y++) {
                 System.err.println("Reading picture. Line " + y + " of " + image.getHeight());
-                Color[] line = new Color[image.getWidth()];
+                DMCColor[] line = new DMCColor[image.getWidth()];
                 for (int x = 0; x < image.getWidth(); x++) {
                     int clr = image.getRGB(x, y);
                     if ("on".equals(Parameters.getFindDMCColor())) {
                         line[x] = DMCColorFinder.findNearestDMCColor(new Color(clr));
                     } else {
-                        line[x] = new Color(clr);
+                        line[x] = new DMCColor(new Color(clr));
                     }
                 }
                 data.put(String.format("%03d", y), line);

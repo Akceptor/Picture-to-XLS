@@ -7,15 +7,16 @@ import java.awt.*;
  */
 public class DMCColorFinder {
 
-    public static Color findNearestDMCColor(Color currentColor) {
-        Color nearestColor = Color.WHITE;
+    public static DMCColor findNearestDMCColor(Color currentColor) {
+        DMCColor nearestColor = DMCColors.COLORS.get(0);
         Integer nearestDistance = new Integer(Integer.MAX_VALUE);
         for (DMCColor color : DMCColors.COLORS) {
+            //TODO needs logic changes
             if (nearestDistance > Math.sqrt(
                     Math.pow(currentColor.getRed() - color.getRgb().getRed(), 2)
                             - Math.pow(currentColor.getGreen() - color.getRgb().getGreen(), 2)
                             - Math.pow(currentColor.getBlue() - color.getRgb().getBlue(), 2))) {
-                nearestColor = currentColor;
+                nearestColor = color;
             }
         }
         return nearestColor;

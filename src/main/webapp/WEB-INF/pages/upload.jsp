@@ -31,7 +31,7 @@
 
     <h2>Color depth</h2>
     <INPUT TYPE=CHECKBOX NAME='DECREASE COLOR' CHECKED>Decrease to 8 bits per pixel (256 colors)</INPUT><BR>
-    <INPUT TYPE=CHECKBOX NAME='CONVERT TO DMC FLOSS' CHECKED>Try to find nearest colors from DMC Floss pattern</INPUT>
+    <INPUT TYPE=CHECKBOX NAME='CONVERT TO DMC FLOSS'>Try to find nearest colors from DMC Floss pattern</INPUT>
     <BR>
 
     <h2>Picture pixel size</h2>
