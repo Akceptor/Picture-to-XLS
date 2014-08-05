@@ -302,205 +302,71 @@ public interface DMCColors {
             new DMCColor(3046, "Yellow Beige-MD", 229, 193, 139),
             new DMCColor(3047, "Yellow Beige-LT", 255, 236, 211),
             new DMCColor(3051, "Green Grey-DK", 85, 73, 0),
-            new DMCColor(3052, "Green Grey-MD", 137, 141, 114)
+            new DMCColor(3052, "Green Grey-MD", 137, 141, 114),
+            new DMCColor(3053, "Green Grey", 187, 179, 148),
+            new DMCColor(3064, "Sportsman Flsh-VY D", 194, 101, 76),
+            new DMCColor(3072, "Beaver Grey-VY LT", 233, 233, 223),
+            new DMCColor(3078, "Golden Yellow-VY LT", 255, 255, 220),
+            new DMCColor(3325, "Baby Blue-LT", 202, 226, 229),
+            new DMCColor(3326, "Rose-LT", 255, 157, 150),
+            new DMCColor(3328, "Salmon-DK", 188, 64, 85),
+            new DMCColor(3340, "Apricot-MD", 255, 123, 103),
+            new DMCColor(3341, "Apricot", 255, 172, 162),
+            new DMCColor(3345, "Hunter Green-DK", 97, 100, 82),
+            new DMCColor(3346, "Hunter Green", 120, 134, 107),
+            new DMCColor(3347, "Yellow Green-MD", 128, 152, 115),
+            new DMCColor(3348, "Yellow Green-LT", 225, 249, 190),
+            new DMCColor(3350, "Dusty Rose-ULT DK", 201, 79, 91),
+            new DMCColor(3354, "Dusty Rose-LT", 255, 214, 209),
+            new DMCColor(3362, "Pine Green-DK", 96, 95, 84),
+            new DMCColor(3363, "Pine Green-MD", 116, 127, 96),
+            new DMCColor(3364, "Pine Green", 161, 167, 135),
+            new DMCColor(3371, "Black Brown", 83, 37, 16),
+            new DMCColor(3607, "Plum-LT", 231, 79, 134),
+            new DMCColor(3608, "Plum-VY LT", 247, 152, 182),
+            new DMCColor(3609, "Plum-ULT LT", 255, 214, 229),
+            new DMCColor(3685, "Mauve-DK", 161, 53, 79),
+            new DMCColor(3687, "Mauve", 203, 78, 97),
+            new DMCColor(3688, "Mauve-MD", 250, 151, 144),
+            new DMCColor(3689, "Mauve-LT", 255, 213, 216),
+            new DMCColor(3705, "Melon-DK", 255, 85, 91),
+            new DMCColor(3706, "Melon-MD", 255, 128, 109),
+            new DMCColor(3708, "Melon-LT", 254, 212, 219),
+            new DMCColor(3712, "Salmon-MD", 230, 101, 107),
+            new DMCColor(3713, "Salmon-VY LT", 253, 229, 217),
+            new DMCColor(3716, "Dusty Rose-VY LT", 255, 211, 212),
+            new DMCColor(3721, "Shell Pink-DK", 184, 75, 77),
+            new DMCColor(3722, "Shell Pink-MD", 184, 89, 88),
+            new DMCColor(3726, "Antique Mauve-DK", 195, 118, 123),
+            new DMCColor(3727, "Antique Mauve-LT", 255, 199, 196),
+            new DMCColor(3731, "Dusty Rose-VY DK", 209, 93, 103),
+            new DMCColor(3733, "Dusty Rose", 255, 154, 148),
+            new DMCColor(3740, "Antique Violet-DK", 156, 125, 133),
+            new DMCColor(3743, "Antique Violet-VY L", 235, 235, 231),
+            new DMCColor(3746, "Blue Violet-DK", 149, 102, 162),
+            new DMCColor(3747, "Blue Violet-VY LT", 230, 236, 232),
+            new DMCColor(3750, "Antique Blue-VY DK", 12, 91, 108),
+            new DMCColor(3752, "Antique Blue-VY LT", 194, 209, 206),
+            new DMCColor(3753, "Antique Blue-ULT VY LT", 237, 247, 247),
+            new DMCColor(3755, "Baby Blue", 158, 176, 206),
+            new DMCColor(3756, "Baby Blue-ULT VY LT", 248, 248, 252),
+            new DMCColor(3760, "Wedgewood", 102, 142, 152),
+            new DMCColor(3761, "Sky Blue-LT", 227, 234, 230),
+            new DMCColor(3765, "Peacock Blue-VY DK", 24, 128, 134),
+            new DMCColor(3766, "Peacock Blue-LT", 24, 101, 111),
+            new DMCColor(3768, "Grey Green-DK", 92, 110, 108),
+            new DMCColor(3770, "Flesh-VY LT", 255, 250, 224),
+            new DMCColor(3772, "Negro Flesh", 173, 83, 62),
+            new DMCColor(3773, "Sportsman Flsh-MD", 231, 134, 103),
+            new DMCColor(3774, "Sportsman Flsh-VY L", 255, 220, 193),
+            new DMCColor(3776, "Mahogony-LT", 221, 109, 91),
+            new DMCColor(3777, "Terra Cotta-VY DK", 191, 64, 36),
+            new DMCColor(3778, "Terra Cotta-LT", 237, 122, 100),
+            new DMCColor(3779, "Terra Cotta-ULT VY L", 255, 177, 152),
+            new DMCColor(3781, "Mocha Brown-DK", 113, 71, 42),
+            new DMCColor(3782, "Mocha Brown-LT", 206, 175, 144),
+            new DMCColor(3787, "Brown Grey-DK", 139, 109, 115),
+            new DMCColor(3790, "Beige Grey-ULT DK", 140, 117, 109),
+            new DMCColor(3799, "Pewter Grey-VY DK", 81, 76, 83)
     });
-            /*
-            3053
-    Green Grey
-    187 179 148BBB394
-    3064
-    Sportsman Flsh
-    -
-    VY D
-    194 101 76C2654C
-    3072
-    Beaver Grey
-    -
-    VY LT
-    233 233 223E9E9DF
-    3078
-    Golden Yellow
-    -
-    VY LT
-    255 255 220FFFFDC
-    3325
-    Baby Blue
-    -LT 202 226 229CAE2E5
-    3326Rose-LT 255 157 150FF9D96
-    3328Salmon-DK 188 64 85BC4055
-    3340Apricot-MD 255 123 103FF7B67
-    3341Apricot 255 172 162EBACA2
-    3345
-    Hunter Green
-    -DK 97 100 82 616452
-            3346
-    Hunter Green
-    120 134 107 78866B
-    3347
-    Yellow Green
-    -MD 128 152 115 809873
-            3348
-    Yellow Green
-    -LT 225 249 190E1F9BE
-    3350
-    Dusty Rose
-    -
-    ULT DK
-    201 79 91C94F5B
-    3354
-    Dusty Rose
-    -LT 255 214 209FFD6D1
-    3362
-    Pine Green
-    -DK 96 95 84 605F54
-            3363
-    Pine Green
-    -MD 116 127 96 747F60
-            3364
-    Pine Green
-    161 167 135A1A787
-    3371
-    Black Brown
-    83 37 16 532510
-            3607Plum-LT 231 79 134E74F86
-            3608Plum-
-    VY LT
-    247 152 182F798B6
-    3609Plum-
-    ULT LT
-    255 214 229FFD6E5
-    3685Mauve-DK 161 53 79A1354F
-    3687Mauve 203 78 97CB4E61
-    3688Mauve-MD 250 151 144FA9790
-    3689Mauve-LT 255 213 216FFD5D8
-    3705Melon-DK 255 85 91FF555B
-    3706Melon-MD 255 128 109FF806D
-    3708Melon-LT 254 212 219FED4DB
-    3712Salmon-MD 230 101 107E6656B
-    3713Salmon-
-    VY LT
-    253 229 217FDE5D9
-    3716
-    Dusty Rose
-    -
-    VY LT
-    255 211 212FFD3D4
-    3721
-    Shell Pink
-    -DK 184 75 77B84B4D
-    3722
-    Shell Pink
-    -MD 184 89 88B85958
-    3726
-    Antique Mauve
-    -DK 195 118 123C3767B
-    3727
-    Antique Mauve
-    -LT 255 199 196FFC7C4
-    3731
-    Dusty Rose
-    -
-    VY DK
-    209 93 103D15D 67
-            3733
-    Dusty Rose
-    255 154 148FF9A94
-    3740
-    Antique Violet
-    -DK 156 125 133 9C7D85
-    3743
-    Antique Violet
-    -
-    VY L
-    235 235 231EBEBE7
-    3746
-    Blue Violet
-    -DK 149 102 162 9566A2
-    3747
-    Blue Violet
-    -
-    VY LT
-    230 236 232E6ECE8
-    3750
-    Antique Blue
-    -
-    VY DK
-    12 91 108 0C5B6C
-    3752
-    Antique Blue
-    -
-    VY LT
-    194 209 206C2D1CE
-    3753Ant.Blue-
-    ULT VY
-    LT 237 247 247EDF7F7
-    3755
-    Baby Blue
-    158 176 206 9EB0CE
-    3756
-    Baby Blue
-    -
-    ULT VY
-    LT 248 248 252F8F8FC
-    3760Wedgewood 102 142 152 668E98
-            3761
-    Sky Blue
-    -LT 227 234 230E3EAE6
-    3765
-    Peacock Blue
-    -
-    VY DK
-    24 128 134 188086
-            3766
-    Peacock Blue
-    -LT 24 101 111 18656F
-            3768
-    Grey Green
-    -DK 92 110 108 5C6E6C
-    3770Flesh-
-    VY LT
-    255 250 224FFFAE0
-    3772
-    Negro Flesh
-    173 83 62AD533E
-    3773
-    Sportsman Flsh
-    -MD 231 134 103E78667
-            3774
-    Sportsman Flsh
-    -
-    VY L
-    255 220 193FFDCC1
-    3776Mahogony-LT 221 109 91DD6D5B
-    3777
-    Terra Cotta
-    -
-    VY DK
-    191 64 36BF4024
-    3778
-    Terra Cotta
-    -LT 237 122 100ED 7A64
-    3779Ter.Cotta-
-    ULT VY
-    L 255 177 152FFB198
-    3781
-    Mocha Brown
-    -DK 113 71 42 71472A
-    3782
-    Mocho Brown
-    -LT 206 175 144CEAF90
-    3787
-    Brown Grey
-    -DK 139 109 115 8B6D73
-    3790
-    Beige Grey
-    -
-    ULT DK
-    140 117 109 8C756D
-    3799
-    Pewter Grey
-    -
-    VY DK
-    81 76 83 514C53
-    */
 }
